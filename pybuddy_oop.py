@@ -74,10 +74,10 @@ class Species(Enum):
 
 
 class PyBuddy:
-    """ PyBuddy class for creating a study buddy."""
+    """PyBuddy class for creating a study buddy."""
 
     def __init__(self, name, species, num_legs, weight_kgs, is_available, skill_list):
-        """ Built-in method to create a new instance."""
+        """Built-in method to create a new instance."""
         self.name = name
         self.species = species
         self.num_legs = num_legs
@@ -151,7 +151,6 @@ if __name__ == "__main__":
 
     # Call the buddy's welcome() method
     alice.display_welcome()
-
 
     # Create another instance of a PyBuddy
     # using named arguments so it's clear what we're doing

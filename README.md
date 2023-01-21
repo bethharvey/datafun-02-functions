@@ -27,3 +27,17 @@ Clone your new repo down to your machine.
 ## Task 3 - Open the Project Locally
 
 Open the project in VS Code. 
+
+## Beth's Notes:
+To use doctest on a class, create an instance of the class in
+doctest format with the desired arguments: 
+>>> ClassName(keyword=arguments)
+Next, call the desired class method, followed by the expected output:
+>>> ClassName.method()
+Expected output
+- Example in useroop.py
+
+To call a class method (method1) within a different method (method2) in the same class:
+def method2(self):
+    self.method1()
+- Example in useroop.py

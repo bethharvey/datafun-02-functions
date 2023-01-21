@@ -16,9 +16,9 @@ Uses only Python Standard Library module:
 
 """
 
-import statistics
+import statistics as stats
 
-# define a variable with some univariant data 
+# define a variable with some univariant data
 # (one varabile, many readings)
 scores = [
     105,
@@ -77,4 +77,36 @@ scores = [
 # typically, x (or time) is independent and
 # y is dependent on x (e.g. temperature vs hour of day)
 x_times = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-y_temps = [2, 5, 8, 20, 21, 23, 24, 27, 30, 31, 31,32]
+y_temps = [2, 5, 8, 20, 21, 23, 24, 27, 30, 31, 31, 32]
+
+# Calculate measures of central tendency for agility scores
+score_mean = stats.mean(scores)
+score_median = stats.median(scores)
+score_mode = stats.mode(scores)
+score_variance = stats.pvariance(scores)
+score_st_dev = stats.pstdev(scores)
+
+print(f"The mean score for the agility test was {score_mean}.")
+print(f"The median score for the agility test was {score_median}.")
+print(f"The mode of all the agility test scores was {score_mode}.")
+print(f"The variance of the agility test scores was {round(score_variance, 2)}.")
+print(
+    f"The standard deviation of the agility test scores was {round(score_st_dev, 2)}."
+)
+print()
+
+# Calculate slope and intercept of best fit line
+slope, intercept = stats.linear_regression(x_times, y_temps)
+print(
+    f"""The best fit line for the time and temperature data has
+a slope of {round(slope, 2)} and an intercept of {round(intercept, 2)}."""
+)
+print()
+
+# Use slope and intercept to predict the temperature at hour 13
+x_future = 13
+y_future = slope * x_future + intercept
+print(
+    f"""Based on the temperatures over the previous 12 hours, the 
+temperature in one hour will be {round(y_future, 0)} degrees."""
+)
